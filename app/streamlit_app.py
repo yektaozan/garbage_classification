@@ -17,7 +17,7 @@ def show_explore_page():
 
         for img_name, img_path in img_path_dict.items():
             st.write(img_name)
-            img = PIL.Image.open('garbage_classification/results/{model_name}{img_path}'.format(model_name=model_name, img_path=img_path)).resize((800, 600))
+            img = PIL.Image.open('results/{model_name}{img_path}'.format(model_name=model_name, img_path=img_path)).resize((800, 600))
             st.image(img)
             st.write('#'*50)
 
@@ -51,7 +51,7 @@ def prepare(img_path, model):
 def show_predict_page():
     st.title('Prediction Page')
     model_name = st.selectbox('Select a model', ['vgg16', 'mobilenetv2'])
-    model = load_model("garbage_classification/models/{}.h5".format(model_name))
+    model = load_model("models/{}.h5".format(model_name))
     uploaded_file = st.file_uploader('Choose an image...', type=['jpg', 'png', 'jpeg'])
     if uploaded_file is not None:
         img = PIL.Image.open(uploaded_file)
