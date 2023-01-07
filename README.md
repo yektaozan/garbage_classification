@@ -4,4 +4,4 @@
 
 dataset: https://www.kaggle.com/datasets/asdasdasasdas/garbage-classification
 
-app: htps://garbageclassifier.streamlit.app/
+app: https://garbageclassifier.streamlit.app/
